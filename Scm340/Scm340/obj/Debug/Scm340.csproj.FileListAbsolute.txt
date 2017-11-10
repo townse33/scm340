@@ -1,0 +1,10 @@
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\bin\Debug\Scm340.exe.config
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\bin\Debug\Scm340.exe
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\bin\Debug\Scm340.pdb
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.csprojResolveAssemblyReference.cache
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.Properties.Resources.resources
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmMainMenu.resources
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.csproj.GenerateResource.Cache
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.exe
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.pdb
+c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmAddMenu.resources
