@@ -55,6 +55,7 @@
       <DependentUpon>ScmAddMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="ScmDataAccess.cs" />
+    <Compile Include="ScmEvent.cs" />
     <Compile Include="ScmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

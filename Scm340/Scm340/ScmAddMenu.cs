@@ -17,6 +17,7 @@ namespace Scm340
         float itemPrice;
         DateTime itemDate = DateTime.Today;
 
+        //Null data is invalid, therefore all fields are initially invalid
         bool invalidPrice = true, invalidQty = true, invalidMin = true, invalidMax = true;
         bool missingCode = true, missingName = true;
 
@@ -56,8 +57,7 @@ namespace Scm340
                     if (invalidMax) { MessageBox.Show("Please enter a valid maximum quantity"); return; };
 
                     ScmStockItem temp_item = new ScmStockItem(itemCode, itemName, itemPrice, itemDate, itemQty, itemMin, itemMax);
-                    ScmDataAccess.addStock(temp_item);
-
+                    ScmEventMediator.OnStockAdded(temp_item, new EventArgs());
                     break;
             }
         }

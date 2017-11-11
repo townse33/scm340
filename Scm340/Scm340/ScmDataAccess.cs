@@ -6,8 +6,9 @@ namespace Scm340
 
     public static class ScmDataAccess
     {
-        public static string dbName = "scm.xml";
+        //This class handles any XML operations required to fetch or store stock data
 
+        public static string dbName = "scm.xml";
 
         public static bool dbExists()
         {
@@ -26,12 +27,15 @@ namespace Scm340
 
         public static void addStock(ScmStockItem item)
         {
-            initDb();
+            initDb(); //I never assume the database exists
             XDocument db = XDocument.Load(dbName);
 
             //Add a new item as a child of the root element 'StockTable'
-            //We use the stock ID as the sole attribute of the new child
+            //We use the stock ID as the sole attribute of the new child for easy searching
             XElement temp_item = new XElement(item.stockId);
+
+            //We add a child node for each attribute
+            //This is an easily readable way to ensure we don't excessively nest nodes
             temp_item.Add(new XElement("stockName", item.stockName));
             temp_item.Add(new XElement("stockPrice", item.stockPrice));
             temp_item.Add(new XElement("stockQty", item.stockQty));
@@ -47,6 +51,9 @@ namespace Scm340
 
     public struct ScmStockItem
     {
+        //Data structure to represent a single stock item
+        //This acts as an intermediate representation between the GUI and DB
+
         public string stockId, stockName;
 
         public float stockPrice;
@@ -55,6 +62,7 @@ namespace Scm340
 
         public int stockQty, stockMin, stockMax;
 
+        //Stock item constructor, all attributes are mandatory so we get them at construction
         public ScmStockItem(string id, string name, float price, DateTime date, int qty, int min, int max)
         {
             stockId = id;
