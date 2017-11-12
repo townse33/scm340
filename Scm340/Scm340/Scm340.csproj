@@ -62,6 +62,12 @@
     <Compile Include="ScmMainMenu.Designer.cs">
       <DependentUpon>ScmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScmViewMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScmViewMenu.Designer.cs">
+      <DependentUpon>ScmViewMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScmMainMenu.resx">
       <DependentUpon>ScmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScmViewMenu.resx">
+      <DependentUpon>ScmViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

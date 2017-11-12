@@ -24,18 +24,21 @@ namespace Scm340
         {
             //Get event sender as button via cast
             Button temp_button = (Button) sender;
-      
+            Form temp_form;
             //Behaviour is determined by button name
-            switch(temp_button.Name)
+            switch (temp_button.Name)
             {
                 case "AddButton":
                     //Switch to Add Stock GUI by creating a new GUI and hiding this one
-                    Form temp_form = new ScmAddMenu();
+                    temp_form = new ScmAddMenu();
                     temp_form.Show();
                     this.Hide();
                     break;
 
                 case "ViewButton":
+                    temp_form = new ScmViewMenu();
+                    temp_form.Show();
+                    this.Hide();
                     break;
 
                 case "ReportButton":

@@ -16,4 +16,20 @@
     <stockMin>2</stockMin>
     <stockMax>8</stockMax>
   </tc456>
+  <ET01>
+    <stockName>Event Test</stockName>
+    <stockPrice>1.43</stockPrice>
+    <stockQty>7</stockQty>
+    <stockDate>2017-11-11T00:00:00+00:00</stockDate>
+    <stockMin>1</stockMin>
+    <stockMax>9</stockMax>
+  </ET01>
+  <tc789>
+    <stockName>View Test</stockName>
+    <stockPrice>537.344</stockPrice>
+    <stockQty>2</stockQty>
+    <stockDate>2017-11-12T00:00:00+00:00</stockDate>
+    <stockMin>1</stockMin>
+    <stockMax>99</stockMax>
+  </tc789>
 </StockTable>

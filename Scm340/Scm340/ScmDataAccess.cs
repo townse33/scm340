@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace Scm340
@@ -46,6 +47,31 @@ namespace Scm340
             db.Root.Add(temp_item);
 
             db.Save(dbName);
+        }
+
+        public static List<ScmStockItem> readStock()
+        {
+            initDb();
+            XDocument db = XDocument.Load(dbName);
+
+            List<ScmStockItem> stock_list = new List<ScmStockItem>();
+            ScmStockItem temp_item;
+
+            foreach(XElement node in db.Root.Elements())
+            {
+                temp_item = new ScmStockItem(
+                                            node.Name.ToString(),
+                                            node.Element("stockName").Value,
+                                            float.Parse(node.Element("stockPrice").Value),
+                                            DateTime.Parse(node.Element("stockDate").Value),
+                                            int.Parse(node.Element("stockQty").Value),
+                                            int.Parse(node.Element("stockMin").Value),
+                                            int.Parse(node.Element("stockMax").Value)
+                                            );
+                stock_list.Add(temp_item);
+            }
+
+            return stock_list;
         }
     }
 

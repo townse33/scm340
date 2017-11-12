@@ -14,12 +14,17 @@ namespace Scm340
     {
         //Declare each possible event the mediator will handle
         public event ScmEvent StockAdded;
-        public event ScmEvent StockModified;
+        public event ScmEvent StockView;
 
         public static void OnStockAdded(object sender, EventArgs e)
         {
             ScmStockItem temp_item = (ScmStockItem)sender;
             ScmDataAccess.addStock(temp_item);
+        }
+
+        public static List<ScmStockItem> OnStockView(object sender, EventArgs e)
+        {
+            return ScmDataAccess.readStock();
         }
     }
 }
