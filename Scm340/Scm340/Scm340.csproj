@@ -50,6 +50,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScmDataAccess.cs" />
+    <Compile Include="ScmDataConvert.cs" />
+    <Compile Include="ScmDataFormat.cs" />
     <Compile Include="ScmEvent.cs" />
     <Compile Include="ScmAdd.cs">
       <SubType>Form</SubType>

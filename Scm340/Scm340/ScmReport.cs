@@ -23,9 +23,12 @@ namespace Scm340
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+        public List<ScmStockItem> current_stock;
+        ScmEvent StockReport;
 
         public ScmReport()
         {
+            StockReport += ScmEventMediator.OnStockReport;
             InitializeComponent();
         }
 
@@ -59,8 +62,6 @@ namespace Scm340
 
         }
 
-
-
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -77,7 +78,7 @@ namespace Scm340
 
         private void ScmReport_Load(object sender, EventArgs e)
         {
-            ScmEventMediator.OnStockReport(this, new EventArgs());
+            StockReport(this, new EventArgs());
         }
 
         private void label2_Click(object sender, EventArgs e)

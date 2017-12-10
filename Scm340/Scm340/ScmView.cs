@@ -24,8 +24,12 @@ namespace Scm340
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        ScmEvent StockView;
+        public List<ScmStockItem> viewList;
+
         public ScmView()
         {
+            StockView += ScmEventMediator.OnStockView;
             InitializeComponent();
         }
 
@@ -76,7 +80,6 @@ namespace Scm340
 
         private void ScmView_Load(object sender, EventArgs e)
         {
-            List<ScmStockItem> viewList = ScmEventMediator.OnStockView(null, new EventArgs());
             listView1.Columns.Add("Stock ID", 60);
             listView1.Columns.Add("Item Name", 85);
             listView1.Columns.Add("Price", 55);
@@ -86,45 +89,9 @@ namespace Scm340
             listView1.Columns.Add("Max Quantity", 75);
             listView1.Columns.Add("Status", 85);
 
-            int i = 0;
-
-            foreach (ScmStockItem item in viewList)
-            {
-                listView1.Items.Add(item.stockId);
-                listView1.Items[i].SubItems.Add(item.stockName);
-                listView1.Items[i].SubItems.Add("£" + item.stockPrice.ToString("N2"));
-                listView1.Items[i].SubItems.Add(item.stockDate.ToString());
-                listView1.Items[i].SubItems.Add(item.stockQty.ToString());
-                listView1.Items[i].SubItems.Add(item.stockMin.ToString());
-                listView1.Items[i].SubItems.Add(item.stockMax.ToString());
-
-                string status_msg;
-
-                if (item.stockQty == 0)
-                {
-                    status_msg = "Out of Stock";
-                    listView1.Items[i].BackColor = Color.LightPink;
-                }
-                else if (item.stockQty < 1.25f * item.stockMin)
-                {
-                    status_msg = "Stock Low";
-                    listView1.Items[i].BackColor = Color.Yellow;
-                }
-                else if (item.stockQty <= item.stockMax)
-                {
-                    status_msg = "In Stock";
-                }
-                else
-                {
-                    status_msg = "Surplus";
-                    listView1.Items[i].BackColor = Color.Yellow;
-                }
-
-                listView1.Items[i].SubItems.Add(status_msg);
-                i++;
-            }
-
+            StockView(this, new EventArgs());
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {

@@ -251,7 +251,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.ListView listView1;
     }
 }
 

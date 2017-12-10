@@ -33,9 +33,11 @@ namespace Scm340
         bool invalidPrice = true, invalidQty = true, invalidMin = true, invalidMax = true;
         bool missingCode = true, missingName = true;
 
+        ScmEvent StockAdded;
 
         public ScmAdd()
         {
+            StockAdded += ScmEventMediator.OnStockAdded;
             InitializeComponent();
         }
 
@@ -127,7 +129,7 @@ namespace Scm340
             if (invalidMax) { MessageBox.Show("Please enter a valid maximum quantity"); return; };
 
             ScmStockItem temp_item = new ScmStockItem(itemCode, itemName, itemPrice, itemDate, itemQty, itemMin, itemMax);
-            ScmEventMediator.OnStockAdded(temp_item, new EventArgs());
+            StockAdded(temp_item, new EventArgs());
         }
 
         private void panel5_Click(object sender, EventArgs e)
