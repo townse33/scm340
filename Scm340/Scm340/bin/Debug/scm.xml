@@ -56,4 +56,12 @@
     <stockMin>1</stockMin>
     <stockMax>9</stockMax>
   </hh>
+  <hightest>
+    <stockName>Spam</stockName>
+    <stockPrice>3</stockPrice>
+    <stockQty>7</stockQty>
+    <stockDate>2017-11-14T00:00:00</stockDate>
+    <stockMin>2</stockMin>
+    <stockMax>6</stockMax>
+  </hightest>
 </StockTable>

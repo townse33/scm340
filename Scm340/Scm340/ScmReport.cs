@@ -77,7 +77,7 @@ namespace Scm340
 
         private void ScmReport_Load(object sender, EventArgs e)
         {
-            
+            ScmEventMediator.OnStockReport(this, new EventArgs());
         }
 
         private void label2_Click(object sender, EventArgs e)

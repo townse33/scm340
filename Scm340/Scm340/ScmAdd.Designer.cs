@@ -231,7 +231,7 @@
             this.DateField.Name = "DateField";
             this.DateField.Size = new System.Drawing.Size(121, 20);
             this.DateField.TabIndex = 23;
-            this.DateField.TextChanged += new System.EventHandler(this.textChanged);
+            this.DateField.ValueChanged += new System.EventHandler(this.DateField_ValueChanged);
             // 
             // label8
             // 
