@@ -1,6 +1,6 @@
 ﻿namespace Scm340
 {
-    partial class ScmMainMenu
+    partial class ScmView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -49,19 +48,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(256, 26);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(171, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "MAIN MENU";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // panel1
             // 
@@ -103,14 +90,12 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(159)))), ((int)(((byte)(219)))));
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(0, 146);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(171, 52);
             this.panel5.TabIndex = 2;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
-            this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
-            this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
             // 
             // label5
             // 
@@ -122,9 +107,6 @@
             this.label5.Size = new System.Drawing.Size(123, 29);
             this.label5.TabIndex = 0;
             this.label5.Text = "View Stock";
-            this.label5.Click += new System.EventHandler(this.panel5_Click);
-            this.label5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
-            this.label5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
             // 
             // panel4
             // 
@@ -193,9 +175,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 29);
+            this.label3.Size = new System.Drawing.Size(123, 29);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Stock Control and Monitoring";
+            this.label3.Text = "View Stock";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
@@ -213,33 +195,31 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label6
+            // listView1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana Pro Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(189, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(475, 46);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Welcome to the Stock Control and Monitoring system for \r\nSmart-Mart.";
+            this.listView1.Location = new System.Drawing.Point(178, 76);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(610, 368);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // ScmMainMenu
+            // ScmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(800, 456);
             this.ControlBox = false;
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScmMainMenu";
+            this.Name = "ScmView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Control and Monitoring";
-            this.Load += new System.EventHandler(this.ScmMainMenu_Load);
+            this.Load += new System.EventHandler(this.ScmView_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -271,7 +251,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 

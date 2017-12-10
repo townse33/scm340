@@ -1,6 +1,6 @@
 ﻿namespace Scm340
 {
-    partial class ScmMainMenu
+    partial class ScmReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -48,20 +51,8 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(256, 26);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(171, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "MAIN MENU";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -78,14 +69,12 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(159)))), ((int)(((byte)(219)))));
             this.panel6.Controls.Add(this.label7);
             this.panel6.Location = new System.Drawing.Point(2, 197);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(169, 54);
             this.panel6.TabIndex = 3;
-            this.panel6.Click += new System.EventHandler(this.panel6_Click);
-            this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
-            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseMove);
             // 
             // label7
             // 
@@ -97,12 +86,10 @@
             this.label7.Size = new System.Drawing.Size(145, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "Stock Report";
-            this.label7.Click += new System.EventHandler(this.panel6_Click);
-            this.label7.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
-            this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseMove);
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(0, 146);
             this.panel5.Name = "panel5";
@@ -193,9 +180,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 29);
+            this.label3.Size = new System.Drawing.Size(145, 29);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Stock Control and Monitoring";
+            this.label3.Text = "Stock Report";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
@@ -213,17 +200,33 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(188, 146);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(600, 298);
+            this.chart1.TabIndex = 4;
+            this.chart1.Text = "chart1";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana Pro Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(189, 93);
+            this.label6.Font = new System.Drawing.Font("Verdana Pro Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(197, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(475, 46);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Welcome to the Stock Control and Monitoring system for \r\nSmart-Mart.";
+            this.label6.Size = new System.Drawing.Size(369, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "There was an error while processing the stock data.";
             // 
-            // ScmMainMenu
+            // ScmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,15 +234,15 @@
             this.ClientSize = new System.Drawing.Size(800, 456);
             this.ControlBox = false;
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScmMainMenu";
+            this.Name = "ScmReport";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Control and Monitoring";
-            this.Load += new System.EventHandler(this.ScmMainMenu_Load);
+            this.Load += new System.EventHandler(this.ScmReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -251,6 +254,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +275,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label6;
     }
 }

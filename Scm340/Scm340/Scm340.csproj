@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,26 +49,33 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScmAddMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScmAddMenu.Designer.cs">
-      <DependentUpon>ScmAddMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ScmDataAccess.cs" />
     <Compile Include="ScmEvent.cs" />
+    <Compile Include="ScmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScmAdd.Designer.cs">
+      <DependentUpon>ScmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScmReport.Designer.cs">
+      <DependentUpon>ScmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScmView.Designer.cs">
+      <DependentUpon>ScmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScmMainMenu.Designer.cs">
       <DependentUpon>ScmMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScmViewMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScmViewMenu.Designer.cs">
-      <DependentUpon>ScmViewMenu.cs</DependentUpon>
-    </Compile>
+    <Compile Include="ScmValidate.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,14 +85,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ScmAddMenu.resx">
-      <DependentUpon>ScmAddMenu.cs</DependentUpon>
+    <EmbeddedResource Include="ScmAdd.resx">
+      <DependentUpon>ScmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScmReport.resx">
+      <DependentUpon>ScmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScmView.resx">
+      <DependentUpon>ScmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScmMainMenu.resx">
       <DependentUpon>ScmMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ScmViewMenu.resx">
-      <DependentUpon>ScmViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -32,4 +32,28 @@
     <stockMin>1</stockMin>
     <stockMax>99</stockMax>
   </tc789>
+  <ggnore>
+    <stockName>zac</stockName>
+    <stockPrice>0.01</stockPrice>
+    <stockQty>0</stockQty>
+    <stockDate>2017-12-09T00:00:00+00:00</stockDate>
+    <stockMin>1</stockMin>
+    <stockMax>2</stockMax>
+  </ggnore>
+  <ggwp>
+    <stockName>me</stockName>
+    <stockPrice>999999</stockPrice>
+    <stockQty>1</stockQty>
+    <stockDate>2017-12-09T00:00:00+00:00</stockDate>
+    <stockMin>1</stockMin>
+    <stockMax>10</stockMax>
+  </ggwp>
+  <hh>
+    <stockName>hh</stockName>
+    <stockPrice>4.3</stockPrice>
+    <stockQty>6</stockQty>
+    <stockDate>2017-12-10T00:00:00+00:00</stockDate>
+    <stockMin>1</stockMin>
+    <stockMax>9</stockMax>
+  </hh>
 </StockTable>

@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace Scm340
 {
-    public partial class ScmMainMenu : Form
+    public partial class ScmView : Form
     /* This partial class acts as an interface to program the GUI behaviour without directly
      * coding the GUI appearance which is rather verbose and was generated using the
      * Windows Form Designer */
@@ -24,7 +24,7 @@ namespace Scm340
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public ScmMainMenu()
+        public ScmView()
         {
             InitializeComponent();
         }
@@ -58,7 +58,6 @@ namespace Scm340
 
             }
 
-            
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -75,8 +74,55 @@ namespace Scm340
 
         }
 
-        private void ScmMainMenu_Load(object sender, EventArgs e)
+        private void ScmView_Load(object sender, EventArgs e)
         {
+            List<ScmStockItem> viewList = ScmEventMediator.OnStockView(null, new EventArgs());
+            listView1.Columns.Add("Stock ID", 60);
+            listView1.Columns.Add("Item Name", 85);
+            listView1.Columns.Add("Price", 55);
+            listView1.Columns.Add("Arrival Date", 120);
+            listView1.Columns.Add("Quantity", 60);
+            listView1.Columns.Add("Min Quantity", 75);
+            listView1.Columns.Add("Max Quantity", 75);
+            listView1.Columns.Add("Status", 85);
+
+            int i = 0;
+
+            foreach (ScmStockItem item in viewList)
+            {
+                listView1.Items.Add(item.stockId);
+                listView1.Items[i].SubItems.Add(item.stockName);
+                listView1.Items[i].SubItems.Add("£" + item.stockPrice.ToString("N2"));
+                listView1.Items[i].SubItems.Add(item.stockDate.ToString());
+                listView1.Items[i].SubItems.Add(item.stockQty.ToString());
+                listView1.Items[i].SubItems.Add(item.stockMin.ToString());
+                listView1.Items[i].SubItems.Add(item.stockMax.ToString());
+
+                string status_msg;
+
+                if (item.stockQty == 0)
+                {
+                    status_msg = "Out of Stock";
+                    listView1.Items[i].BackColor = Color.LightPink;
+                }
+                else if (item.stockQty < 1.25f * item.stockMin)
+                {
+                    status_msg = "Stock Low";
+                    listView1.Items[i].BackColor = Color.Yellow;
+                }
+                else if (item.stockQty <= item.stockMax)
+                {
+                    status_msg = "In Stock";
+                }
+                else
+                {
+                    status_msg = "Surplus";
+                    listView1.Items[i].BackColor = Color.Yellow;
+                }
+
+                listView1.Items[i].SubItems.Add(status_msg);
+                i++;
+            }
 
         }
 
@@ -107,23 +153,6 @@ namespace Scm340
             this.Hide();
         }
 
-        private void panel5_MouseMove(object sender, MouseEventArgs e)
-        {
-            panel5.BackColor = Color.FromArgb(52, 159, 219);
-        }
-
-        private void panel5_MouseLeave(object sender, EventArgs e)
-        {
-            panel5.BackColor = Color.FromArgb(64, 64, 64);
-        }
-
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            Form temp_form = new ScmView();
-            temp_form.Show();
-            this.Hide();
-        }
-
         private void panel6_MouseMove(object sender, MouseEventArgs e)
         {
             panel6.BackColor = Color.FromArgb(52, 159, 219);
@@ -149,6 +178,7 @@ namespace Scm340
         private void scm_Click(object sender, EventArgs e)
         {
             Program.MainForm.Show();
+            Dispose();
         }
     }
 }

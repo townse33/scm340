@@ -7,5 +7,6 @@ c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm3
 c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.csproj.GenerateResource.Cache
 c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.exe
 c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.pdb
-c:\users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmAddMenu.resources
-C:\Users\jtow\documents\visual studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmViewMenu.resources
+C:\Users\jtow\Documents\Visual Studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmView.resources
+C:\Users\jtow\Documents\Visual Studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmAdd.resources
+C:\Users\jtow\Documents\Visual Studio 2015\Projects\Scm340\Scm340\obj\Debug\Scm340.ScmReport.resources

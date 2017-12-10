@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace Scm340
 {
-    public partial class ScmMainMenu : Form
+    public partial class ScmReport : Form
     /* This partial class acts as an interface to program the GUI behaviour without directly
      * coding the GUI appearance which is rather verbose and was generated using the
      * Windows Form Designer */
@@ -24,7 +24,7 @@ namespace Scm340
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public ScmMainMenu()
+        public ScmReport()
         {
             InitializeComponent();
         }
@@ -55,11 +55,11 @@ namespace Scm340
                     temp_form.Show();
                     this.Hide();
                     break;
-
             }
 
-            
         }
+
+
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -75,9 +75,9 @@ namespace Scm340
 
         }
 
-        private void ScmMainMenu_Load(object sender, EventArgs e)
+        private void ScmReport_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -124,23 +124,6 @@ namespace Scm340
             this.Hide();
         }
 
-        private void panel6_MouseMove(object sender, MouseEventArgs e)
-        {
-            panel6.BackColor = Color.FromArgb(52, 159, 219);
-        }
-
-        private void panel6_MouseLeave(object sender, EventArgs e)
-        {
-            panel6.BackColor = Color.FromArgb(64, 64, 64);
-        }
-
-        private void panel6_Click(object sender, EventArgs e)
-        {
-            Form temp_form = new ScmReport();
-            temp_form.Show();
-            this.Hide();
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -149,6 +132,7 @@ namespace Scm340
         private void scm_Click(object sender, EventArgs e)
         {
             Program.MainForm.Show();
+            Dispose();
         }
     }
 }
