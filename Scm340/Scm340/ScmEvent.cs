@@ -16,8 +16,8 @@ namespace Scm340
       
         public static void OnStockAdded(object sender, EventArgs e)
         {
-            ScmStockItem temp_item = (ScmStockItem)sender;
-            ScmDataAccess.addStock(temp_item);
+            ScmAdd gui = (ScmAdd)sender;
+            if (ScmValidate.validStock(gui)) { ScmDataAccess.addStock(gui.submission); }
         }
 
         public static void OnStockView(object sender, EventArgs e)

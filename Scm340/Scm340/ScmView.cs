@@ -80,15 +80,6 @@ namespace Scm340
 
         private void ScmView_Load(object sender, EventArgs e)
         {
-            listView1.Columns.Add("Stock ID", 60);
-            listView1.Columns.Add("Item Name", 85);
-            listView1.Columns.Add("Price", 55);
-            listView1.Columns.Add("Arrival Date", 120);
-            listView1.Columns.Add("Quantity", 60);
-            listView1.Columns.Add("Min Quantity", 75);
-            listView1.Columns.Add("Max Quantity", 75);
-            listView1.Columns.Add("Status", 85);
-
             StockView(this, new EventArgs());
         }
 

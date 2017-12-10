@@ -28,10 +28,11 @@ namespace Scm340
         int itemQty, itemMin, itemMax;
         float itemPrice;
         DateTime itemDate = DateTime.Today;
+        public ScmStockItem submission;
 
         //Null data is invalid, therefore all fields are initially invalid
-        bool invalidPrice = true, invalidQty = true, invalidMin = true, invalidMax = true;
-        bool missingCode = true, missingName = true;
+        public bool invalidPrice = true, invalidQty = true, invalidMin = true, invalidMax = true;
+        public bool missingCode = true, missingName = true;
 
         ScmEvent StockAdded;
 
@@ -121,15 +122,8 @@ namespace Scm340
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (missingCode) { MessageBox.Show("Please enter a product code"); return; };
-            if (missingName) { MessageBox.Show("Please enter a product name"); return; };
-            if (invalidPrice) { MessageBox.Show("Please enter a valid price"); return; };
-            if (invalidQty) { MessageBox.Show("Please enter a valid quantity"); return; };
-            if (invalidMin) { MessageBox.Show("Please enter a valid minimum quantity"); return; };
-            if (invalidMax) { MessageBox.Show("Please enter a valid maximum quantity"); return; };
-
-            ScmStockItem temp_item = new ScmStockItem(itemCode, itemName, itemPrice, itemDate, itemQty, itemMin, itemMax);
-            StockAdded(temp_item, new EventArgs());
+            submission = new ScmStockItem(itemCode, itemName, itemPrice, itemDate, itemQty, itemMin, itemMax);
+            StockAdded(this, new EventArgs());
         }
 
         private void panel5_Click(object sender, EventArgs e)
