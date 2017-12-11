@@ -10,10 +10,10 @@ XML was used rather than SQL as this felt more appropriate for a single table fl
 
 Implemented User Stories:
 
-    -As a user, I must be able to add stock items to the database, so that they can be managed
+    -As a user, I must be able to add stock to the system, so that I can populate the stock database.
   
-    -As a user, I must be able to modify stock items in the database, to update information on the stock
+    -As a user, I must be view the stock in the system, so that I can find the status of each stock item.
   
-    -As a user, I should be able to view a stock report, concisely stating the stock to be re-ordered
+    -As a user, I want to be able to view a stock report, to analyse the overall situation of the stock system.
   
  
